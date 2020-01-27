@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import spells from './files/dnd-spells.js';
 
-const App: React.FC = () => {
+export default function App(props: any) {
+  useEffect(() => {
+    console.log(spells);
+  });
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -22,5 +27,3 @@ const App: React.FC = () => {
     </div>
   );
 }
-
-export default App;
