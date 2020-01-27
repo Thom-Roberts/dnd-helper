@@ -53,7 +53,7 @@ export default function Spells(props: any) {
 						search
 						value={classFilter}
 					/>
-					<Button onClick={() => setClassFilter('')}>
+					<Button onClick={() => {setClassFilter(''); setLevelFilter(0);}}>
 						Clear
 					</Button>
 					<Dropdown
