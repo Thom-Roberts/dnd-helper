@@ -7709,7 +7709,11 @@ const spells = [
     "casting_time":"1 action",
     "level":"2nd-level",
     "school":"Conjuration",
-    "class":"Druid, Sorcerer, Wizard",
+    "class":[
+      "Druid", 
+      "Sorcerer", 
+      "Wizard"
+    ],
     "archetype":"Druid: Underdark",
     "circles":"Underdark"
   },
