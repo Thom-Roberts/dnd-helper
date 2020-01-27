@@ -1,11 +1,14 @@
 import React, { SyntheticEvent } from 'react';
 import spells from '../files/dnd-spells';
 import { Button, Dropdown, Table, } from 'semantic-ui-react';
-
+import SpellsModal from './spellsModal';
 
 export default function Spells(props: any) {
 	const [ classFilter, setClassFilter ] = React.useState('');
 	const [ levelFilter, setLevelFilter ] = React.useState(0);
+	const [ openModal, setOpenModal ] = React.useState(false);
+	const [ spellSelected, setSpellSelected ] = React.useState();
+
 
 	const classOptions = [
 		{ key: 'Barbarian', value: 'Barbarian', text: 'Barbarian' },
@@ -42,6 +45,11 @@ export default function Spells(props: any) {
 		setLevelFilter(value);
 	}
 
+	function displayModal(index: number) {
+		setSpellSelected(spells[index]);
+		setOpenModal(true);
+	}
+
 	return (
 		<div>
 			<div>
@@ -66,38 +74,44 @@ export default function Spells(props: any) {
 					/>
 			</div>
 			<div>
-					<Table striped celled>
-						<Table.Header>
-							<Table.Row>
-									<Table.HeaderCell>Spell Name</Table.HeaderCell>
-									<Table.HeaderCell>Class</Table.HeaderCell>
-									<Table.HeaderCell>Max Level</Table.HeaderCell>
-							</Table.Row>
-						</Table.Header>
+				<Table striped celled>
+					<Table.Header>
+						<Table.Row>
+								<Table.HeaderCell>Spell Name</Table.HeaderCell>
+								<Table.HeaderCell>Class</Table.HeaderCell>
+								<Table.HeaderCell>Max Level</Table.HeaderCell>
+						</Table.Row>
+					</Table.Header>
 
-						<Table.Body>
-						{
-							spells.map(spell => {
-								if((spell.level <= levelFilter || spell.level === 'Cantrip' || levelFilter === 0) && (classFilter === '' || spell.class.includes(classFilter))) {
-									return(
-										<Table.Row>
+					<Table.Body>
+					{
+						spells.map((spell, index) => {
+							if((spell.level <= levelFilter || spell.level === 'Cantrip' || levelFilter === 0) && (classFilter === '' || spell.class.includes(classFilter))) {
+								return(
+									<Table.Row key={index} onClick={() => displayModal(index)}>
 											<Table.Cell>{spell.name}</Table.Cell>
 											<Table.Cell>{spell.class.join(', ')}</Table.Cell>
 											<Table.Cell>{spell.level}</Table.Cell>
-										</Table.Row>
-									);
-								}
-								else {
-									return <React.Fragment></React.Fragment>
-								}
-							})
-						}
-							<Table.Row>
-									<Table.Cell></Table.Cell>
-							</Table.Row>
-						</Table.Body>
-					</Table>
+									</Table.Row>
+								);
+							}
+							else {
+								return <React.Fragment></React.Fragment>
+							}
+						})
+					}
+					</Table.Body>
+				</Table>
 			</div>
+
+			<SpellsModal 
+				shouldOpen={openModal}
+				spellInfo={spellSelected}
+				closeFunction={() => {
+					setSpellSelected(undefined)
+					setOpenModal(false)
+				}}
+			/>
 		</div>
 	);
 }
