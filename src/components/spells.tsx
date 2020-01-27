@@ -49,9 +49,18 @@ export default function Spells(props: any) {
                     </Table.Header>
 
                     <Table.Body>
-
+							{
+								spells.map(spell => {
+									return(
+										<Table.Row>
+											<Table.Cell>{spell.name}</Table.Cell>
+											<Table.Cell>{spell.class.join(', ')}</Table.Cell>
+										</Table.Row>
+									);
+								})
+							}
                         <Table.Row>
-                            <Table.Cell></Table.Cell>    
+                            <Table.Cell></Table.Cell>
                         </Table.Row>
                     </Table.Body>
                 </Table>
