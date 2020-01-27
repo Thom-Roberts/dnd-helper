@@ -71,14 +71,14 @@ export default function Spells(props: any) {
 							<Table.Row>
 									<Table.HeaderCell>Spell Name</Table.HeaderCell>
 									<Table.HeaderCell>Class</Table.HeaderCell>
-									<Table.HeaderCell>Min. Level</Table.HeaderCell>
+									<Table.HeaderCell>Max Level</Table.HeaderCell>
 							</Table.Row>
 						</Table.Header>
 
 						<Table.Body>
 						{
 							spells.map(spell => {
-								if(spell.level >= levelFilter && (classFilter === '' || spell.class.includes(classFilter))) {
+								if((spell.level <= levelFilter || spell.level === 'Cantrip' || levelFilter === 0) && (classFilter === '' || spell.class.includes(classFilter))) {
 									return(
 										<Table.Row>
 											<Table.Cell>{spell.name}</Table.Cell>
