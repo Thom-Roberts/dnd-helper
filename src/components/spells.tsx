@@ -1,6 +1,6 @@
-import React, { useState, SyntheticEvent } from 'react';
+import React, { SyntheticEvent } from 'react';
 import spells from '../files/dnd-spells';
-import { Button, Dropdown, Modal, Table, } from 'semantic-ui-react';
+import { Button, Dropdown, Table, } from 'semantic-ui-react';
 
 
 export default function Spells(props: any) {
@@ -43,9 +43,17 @@ export default function Spells(props: any) {
                 <Table striped celled>
                     <Table.Header>
                         <Table.Row>
-
+                            <Table.HeaderCell>Spell Name</Table.HeaderCell>
+                            <Table.HeaderCell>Class</Table.HeaderCell>
                         </Table.Row>
                     </Table.Header>
+
+                    <Table.Body>
+
+                        <Table.Row>
+                            <Table.Cell></Table.Cell>    
+                        </Table.Row>
+                    </Table.Body>
                 </Table>
             </div>
         </div>
