@@ -4,7 +4,7 @@ import { Modal } from 'semantic-ui-react';
 interface SpellModalProps {
     shouldOpen: boolean;
     closeFunction: Function;
-    spellInfo: any;
+    spellInfo: any; // Maybe I'll change this type once I figure out the exact type of this interface
 }
 
 export default function SpellDetails(props: SpellModalProps) {
@@ -16,9 +16,10 @@ export default function SpellDetails(props: SpellModalProps) {
         >
             <Modal.Content>
                 {props.spellInfo !== undefined && 
-                <React.Fragment>
-                    {props.spellInfo.name}
-                </React.Fragment>
+                    <React.Fragment>
+                        {props.spellInfo.name}
+                        {props.spellInfo.desc}
+                    </React.Fragment>
                 }
             </Modal.Content>
         </Modal>
