@@ -17,8 +17,18 @@ export default function SpellDetails(props: SpellModalProps) {
             <Modal.Content>
                 {props.spellInfo !== undefined && 
                     <React.Fragment>
-                        {props.spellInfo.name}
-                        {props.spellInfo.desc}
+                        <div>
+                           {props.spellInfo.name}
+                        </div>
+                        <div style={{paddingTop: '10px',}}>
+                            Requires: {props.spellInfo.casting_time}
+                        </div>
+                        <div style={{paddingTop: '10px',}}>
+                            {props.spellInfo.desc}
+                        </div>
+                        <div style={{paddingTop: '10px',}}>
+                        {props.spellInfo.higher_level ? props.spellInfo.higher_level : ''}
+                        </div>
                     </React.Fragment>
                 }
             </Modal.Content>
