@@ -61,9 +61,6 @@ export default function Spells(props: any) {
 						search
 						value={classFilter}
 					/>
-					<Button onClick={() => {setClassFilter(''); setLevelFilter(0);}}>
-						Clear
-					</Button>
 					<Dropdown
 						onChange={handleLevelChange}
 						options={levelOptions}
@@ -72,6 +69,9 @@ export default function Spells(props: any) {
 						search
 						value={levelFilter > 0 ? levelFilter : 'None'}
 					/>
+					<Button onClick={() => {setClassFilter(''); setLevelFilter(0);}}>
+						Clear
+					</Button>
 			</div>
 			<div>
 				<Table striped celled>
@@ -96,7 +96,7 @@ export default function Spells(props: any) {
 								);
 							}
 							else {
-								return <React.Fragment></React.Fragment>
+								return <React.Fragment key={index}></React.Fragment>
 							}
 						})
 					}
