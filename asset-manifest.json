@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/dnd-helper/static/js/main.21f1a6bc.chunk.js",
+    "main.js.map": "/dnd-helper/static/js/main.21f1a6bc.chunk.js.map",
+    "runtime-main.js": "/dnd-helper/static/js/runtime-main.163dbac4.js",
+    "runtime-main.js.map": "/dnd-helper/static/js/runtime-main.163dbac4.js.map",
+    "static/css/2.1c91922b.chunk.css": "/dnd-helper/static/css/2.1c91922b.chunk.css",
+    "static/js/2.fc7bb461.chunk.js": "/dnd-helper/static/js/2.fc7bb461.chunk.js",
+    "static/js/2.fc7bb461.chunk.js.map": "/dnd-helper/static/js/2.fc7bb461.chunk.js.map",
+    "index.html": "/dnd-helper/index.html",
+    "precache-manifest.00207e746555363d4094a454492e6421.js": "/dnd-helper/precache-manifest.00207e746555363d4094a454492e6421.js",
+    "service-worker.js": "/dnd-helper/service-worker.js",
+    "static/css/2.1c91922b.chunk.css.map": "/dnd-helper/static/css/2.1c91922b.chunk.css.map",
+    "static/js/2.fc7bb461.chunk.js.LICENSE": "/dnd-helper/static/js/2.fc7bb461.chunk.js.LICENSE",
+    "static/media/semantic.min.css": "/dnd-helper/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.163dbac4.js",
+    "static/css/2.1c91922b.chunk.css",
+    "static/js/2.fc7bb461.chunk.js",
+    "static/js/main.21f1a6bc.chunk.js"
+  ]
+}
