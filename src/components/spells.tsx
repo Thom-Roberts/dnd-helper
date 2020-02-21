@@ -74,7 +74,7 @@ export default function Spells(props: any) {
 					</Button>
 			</div>
 			<div>
-				<Table striped celled>
+				<Table striped celled stackable={false}>
 					<Table.Header>
 						<Table.Row>
 								<Table.HeaderCell>Spell Name</Table.HeaderCell>
